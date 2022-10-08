@@ -1,0 +1,14 @@
+class Solution {
+    Node deleteMid(Node head) {
+       Node low=head;
+       Node high=head;
+       Node temp=null;
+       while(high!=null && high.next!=null){
+           temp = low;
+           high=high.next.next;
+           low=low.next;
+       }
+       temp.next = low.next;
+       return head;
+    }
+}
